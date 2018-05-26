@@ -5,20 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>厨政后台系统</title>
   <link rel="stylesheet" href="./lib/layui/css/layui.css" />
+  <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_682679_gidhyiqv22dibe29.css" />
   <link rel="stylesheet" href="./assets/style/main.css" />
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin page-main">
   <div class="layui-header">
     <div class="layui-logo">
-	 厨政一体化精细化管理平台
+	   厨政一体化精细化管理平台
     </div>
     <ul class="layui-nav layui-layout-right">
       <li class="layui-nav-item">
         <a href="javascript:;">
 					<img src="http://t.cn/RCzsdCq" class="layui-nav-img" />
 					<span class="welcome">
-						欢迎光临<br/>厨政111
+						欢迎光临<br/>厨政
 					</span> 
         </a>
         <dl class="layui-nav-child">
@@ -30,9 +31,84 @@
   </div>
   
   <div class="layui-side layui-bg-black">
-    <div class="layui-side-scroll">
+    <div class="layui-row grid-demo">
+      <div class="layui-col-md3">
+        <ul class="sidebar-nav">
+          <li>
+            <h4 class="nav-icon">
+              <i class="iconfont icon-home"></i>
+            </h4>
+            <p class="nav-text">首页</p>
+          </li>
+          <li>
+            <h4 class="nav-icon">
+              <i class="iconfont">&#xe604;</i>
+            </h4>
+            <p class="nav-text">菜谱</p>
+          </li>
+          <li>
+            <h4 class="nav-icon">
+              <i class="iconfont">&#xe609;</i>
+            </h4>
+            <p class="nav-text">库存</p>
+          </li>
+          <li>
+            <h4 class="nav-icon">
+              <i class="iconfont">&#xe605;</i>
+            </h4>
+            <p class="nav-text">采购</p>
+          </li>
+          <li>
+            <h4 class="nav-icon">
+              <i class="iconfont">&#xe67d;</i>
+            </h4>
+            <p class="nav-text">财务</p>
+          </li>
+          <li>
+            <h4 class="nav-icon">
+              <i class="iconfont">&#xe61d;</i>
+            </h4>
+            <p class="nav-text">数据</p>
+          </li>
+          <li>
+            <h4 class="nav-icon">
+              <i class="iconfont">&#xe607;</i>
+            </h4>
+            <p class="nav-text">系统</p>
+          </li>
+        </ul>
+      </div>
+      <div class="layui-col-md9">
+        <div class="layui-side-scroll">
+          <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+          <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+            <li class="layui-nav-item layui-nav-itemed">
+              <a class="" href="javascript:;">所有商品</a>
+              <dl class="layui-nav-child">
+                <dd><a href="javascript:;">列表一</a></dd>
+                <dd><a href="javascript:;">列表二</a></dd>
+                <dd><a href="javascript:;">列表三</a></dd>
+                <dd><a href="">超链接</a></dd>
+              </dl>
+            </li>
+            <li class="layui-nav-item">
+              <a href="javascript:;">解决方案</a>
+              <dl class="layui-nav-child">
+                <dd><a href="javascript:;">列表一</a></dd>
+                <dd><a href="javascript:;">列表二</a></dd>
+                <dd><a href="">超链接</a></dd>
+              </dl>
+            </li>
+            <li class="layui-nav-item"><a href="">云市场</a></li>
+            <li class="layui-nav-item"><a href="">发布商品</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="layui-side-scroll">
       <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+      <!-- <ul class="layui-nav layui-nav-tree"  lay-filter="test">
         <li class="layui-nav-item layui-nav-itemed">
           <a class="" href="javascript:;">所有商品</a>
           <dl class="layui-nav-child">
@@ -53,17 +129,18 @@
         <li class="layui-nav-item"><a href="">云市场</a></li>
         <li class="layui-nav-item"><a href="">发布商品</a></li>
       </ul>
-    </div>
+    </div> -->
+
   </div>
   
   <div class="layui-body">
     <!-- 内容主体区域 -->
-    <div style="padding: 15px;">内容主体区域</div>
+    <iframe src="pages/home.html" width="100%" height="100%" frameborder="no" border="0" marginwidth="0"></iframe>>
   </div>
   
   <div class="layui-footer">
     <!-- 底部固定区域 -->
-    © 厨政一体化精细化管理平台
+    ©  深圳绿源餐饮管理有限公司
   </div>
 </div>
 <script src="./lib/layui/layui.js"></script>

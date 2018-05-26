@@ -24,3 +24,17 @@
 	margin-right:20px;
 	margin-left:10px;
 }
+.page-main .sidebar-nav{
+	border-right:1px solid #23262E;
+	height:900px;
+}
+.page-main .sidebar-nav li{
+	padding-top:50px;
+	text-align:center;
+}
+.page-main .sidebar-nav .nav-icon i{
+	font-size:30px;
+}
+.page-main .sidebar-nav .nav-text{
+	
+}

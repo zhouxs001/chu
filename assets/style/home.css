@@ -1,0 +1,13 @@
+.page-home{
+	padding-top:100px;
+	text-align:center;
+}
+.page-home .txta-center{
+	text-align: center;
+	padding-bottom:50px;
+	color:#58a64c;
+}
+.page-home .layui-carousel img{
+	width:100%;
+	height:100%;
+}
