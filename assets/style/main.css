@@ -1,0 +1,26 @@
+.page-main .layui-logo{
+	left:200px;
+}
+.page-main .welcome{
+	font-size:12px;
+	line-height:1;
+	margin-top:-10px;
+}
+.page-main .welcome .layui-nav-img{
+	float:left;
+	display:inline-block;
+}
+.page-main .layui-nav-img,
+.page-main .welcome{
+	float:left;
+	display:inline-block;
+	padding-top:15px;
+	padding-bottom:15px;
+}
+.page-main .welcome{
+	padding-top:20px;
+	line-height:1.5;
+	text-align:center;
+	margin-right:20px;
+	margin-left:10px;
+}
