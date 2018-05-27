@@ -1,6 +1,9 @@
 .page-main{
 	min-width:500px;
 }
+.layui-layout-admin .layui-body {
+	overflow: hidden;
+}
 .page-main .layui-logo{
 	left:20px;
 }
@@ -31,7 +34,6 @@
 .page-main .layui-side-scroll ul{
 	width:100%;
 }
-.page-main .layui-side,
 .page-main .layui-side .sidebar-main,
 .page-main .layui-side .grid-demo
 {
@@ -40,15 +42,6 @@
 .page-main .sidebar-main{
 	border-right:1px solid #23262E;
 	position: relative;
-}
-.page-main .sidebar-nav{
-	position: absolute;
-	top:0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	height: 845px;
-	margin: auto;
 }
 .page-main .sidebar-nav li{
 	padding:10px 0;
