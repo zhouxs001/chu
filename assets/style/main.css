@@ -1,3 +1,6 @@
+.page-main{
+	min-width:500px;
+}
 .page-main .layui-logo{
 	left:20px;
 }
@@ -78,7 +81,7 @@
 }
 .page-main .subside-line .line{
 	border-top:1px solid #fff;
-	margin:10px 5px 0;
+	margin:10px 5px;
 }
 .page-main .layui-nav-tree i{
 	font-size:20px;

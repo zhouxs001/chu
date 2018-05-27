@@ -6,12 +6,13 @@
   <title>厨政后台系统</title>
   <link rel="stylesheet" type="text/css" href="./lib/layui/css/layui.css" />
   <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_682679_ydqhwrh569c9dx6r.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/style/base.css" />
   <link rel="stylesheet" type="text/css" href="./assets/style/main.css" />
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin page-main">
-  <div class="layui-header">
-    <div class="layui-logo">
+  <div class="layui-header layui-row">
+    <div class="layui-logo layui-hide-xs">
 	   厨政一体化精细化管理平台
     </div>
     <ul class="layui-nav layui-layout-right">
@@ -32,7 +33,7 @@
   
   <div class="layui-side layui-bg-black">
     <div class="layui-row grid-demo">
-      <div class="layui-col-md3 sidebar-main">
+      <div class="layui-col-md3 layui-col-xs3 layui-col-sm3 sidebar-main">
         <ul class="sidebar-nav">
           <li>
             <h4 class="nav-icon">
@@ -78,7 +79,7 @@
           </li>
         </ul>
       </div>
-      <div class="layui-col-md9">
+      <div class="layui-col-md9 layui-col-xs9 layui-col-sm9">
         <div class="layui-side-scroll">
           <div class="sidebar-sub">
             <h4 class="icon">
@@ -109,7 +110,7 @@
                 <dd><a href="javascript:;">列表一</a></dd>
                 <dd><a href="javascript:;">列表二</a></dd>
                 <dd><a href="javascript:;">列表三</a></dd>
-                <dd><a href="">超链接</a></dd>
+                <dd><a href="./index.html" target="showConent">超链接</a></dd>
               </dl>
             </li>
             <li class="layui-nav-item">
@@ -120,7 +121,7 @@
               <dl class="layui-nav-child">
                 <dd><a href="javascript:;">列表一</a></dd>
                 <dd><a href="javascript:;">列表二</a></dd>
-                <dd><a href="">超链接</a></dd>
+                <dd><a href="pages/home.html" target="showConent">超链接</a></dd>
               </dl>
             </li>
             <li class="layui-nav-item">
@@ -169,8 +170,8 @@
   
   <div class="layui-body">
     <!-- 内容主体区域 -->
-    <iframe src="pages/home.html" width="100%" height="100%" 
-      frameborder="no" border="0" marginwidth="0">
+    <iframe src="pages/home.html" width="100%" height="100%" scrolling="no" 
+      frameborder="0" border="0" marginwidth="0" id="showFrame" name="showConent">
     </iframe>
   </div>
   
