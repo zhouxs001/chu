@@ -1,5 +1,5 @@
 .page-main .layui-logo{
-	left:200px;
+	left:20px;
 }
 .page-main .welcome{
 	font-size:12px;
@@ -24,12 +24,31 @@
 	margin-right:20px;
 	margin-left:10px;
 }
-.page-main .sidebar-nav{
+.page-main .layui-side-scroll,
+.page-main .layui-side-scroll ul{
+	width:100%;
+}
+.page-main .layui-side,
+.page-main .layui-side .sidebar-main,
+.page-main .layui-side .grid-demo
+{
+	height:100%;
+}
+.page-main .sidebar-main{
 	border-right:1px solid #23262E;
-	height:900px;
+	position: relative;
+}
+.page-main .sidebar-nav{
+	position: absolute;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 845px;
+	margin: auto;
 }
 .page-main .sidebar-nav li{
-	padding-top:50px;
+	padding:10px 0;
 	text-align:center;
 }
 .page-main .sidebar-nav .nav-icon i{
@@ -37,4 +56,30 @@
 }
 .page-main .sidebar-nav .nav-text{
 	
+}
+.page-main .sidebar-sub{
+	height:150px;
+	text-align:center;
+	line-height:1;
+}
+.page-main .sidebar-sub .icon{
+	padding-top:20px;
+}
+.page-main .sidebar-sub .icon i{
+	font-size:80px;
+}
+.page-main .sidebar-sub .text{
+	padding-top:10px;
+}
+.page-main .subside-line{
+	text-align: center;
+	overflow:hidden;
+	padding-bottom: 20px;
+}
+.page-main .subside-line .line{
+	border-top:1px solid #fff;
+	margin:10px 5px 0;
+}
+.page-main .layui-nav-tree i{
+	font-size:20px;
 }
