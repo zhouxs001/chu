@@ -34,18 +34,22 @@
   <div class="layui-side layui-bg-black">
     <div class="layui-row grid-demo">
       <div class="layui-col-md3 layui-col-xs3 layui-col-sm3 sidebar-main">
-        <ul class="sidebar-nav">
+        <ul class="sidebar-nav" style="min-width:50px;">
           <li>
-            <h4 class="nav-icon">
-              <i class="iconfont icon-home"></i>
-            </h4>
-            <p class="nav-text">首页</p>
+            <a href="./pages/home.html" target="showConent">
+              <h4 class="nav-icon">
+                <i class="iconfont icon-home"></i>
+              </h4>
+              <p class="nav-text">首页</p>
+            </a>
           </li>
           <li>
-            <h4 class="nav-icon">
-              <i class="iconfont">&#xe604;</i>
-            </h4>
-            <p class="nav-text">菜谱</p>
+            <a href="./index.html" target="showConent">
+              <h4 class="nav-icon">
+                <i class="iconfont">&#xe604;</i>
+              </h4>
+              <p class="nav-text">菜谱</p>
+            </a>
           </li>
           <li>
             <h4 class="nav-icon">
@@ -118,11 +122,6 @@
                 <i class="iconfont">&#xe69a;</i>
                 零点自选
               </a>
-              <dl class="layui-nav-child">
-                <dd><a href="javascript:;">列表一</a></dd>
-                <dd><a href="javascript:;">列表二</a></dd>
-                <dd><a href="pages/home.html" target="showConent">超链接</a></dd>
-              </dl>
             </li>
             <li class="layui-nav-item">
               <a href="">
@@ -170,7 +169,7 @@
   
   <div class="layui-body">
     <!-- 内容主体区域 -->
-    <iframe src="pages/home.html" width="100%" height="100%" scrolling="no" 
+    <iframe src="./index.html" width="100%" height="100%" scrolling="yes" 
       frameborder="0" border="0" marginwidth="0" id="showFrame" name="showConent">
     </iframe>
   </div>
