@@ -38,6 +38,9 @@
 	border:none;
 	border-color: #009588;
 }
+.page-menu #menuTable tr td.eat-number{
+	padding:9px 15px;
+}
 #menuTable tr td .item {
 	border-bottom: 1px solid #e6e6e6;
 	padding: 9px 15px;
