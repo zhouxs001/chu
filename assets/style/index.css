@@ -1,19 +1,90 @@
 .page-index{
-
+	min-width:500px;
 }
-.page-index .layui-breadcrumb{
-	font-size:14px;
-	line-height:40px;
+.layui-layout-admin .layui-body {
+	overflow: hidden;
 }
-.page-index .index-title{
-	margin:0 20px 20px;
+.page-index .layui-logo{
+	left:0;
 }
-.layui-table-body{
+.page-index .layui-layout-left li *{
+	font-size:16px;
+}
+.page-index .welcome{
+	font-size:12px;
+	line-height:1;
+	margin-top:-10px;
+}
+.page-index .welcome .layui-nav-img{
+	float:left;
+	display:inline-block;
+}
+.page-index .layui-nav-img,
+.page-index .welcome{
+	float:left;
+	display:inline-block;
+	padding-top:15px;
+	padding-bottom:15px;
+}
+.page-index .welcome{
+	padding-top:20px;
+	line-height:1.5;
+	text-align:center;
+	margin-right:20px;
+	margin-left:10px;
+}
+.page-index .layui-nav-tree *{
+	font-size:16px;
+}
+.page-index .layui-side-scroll,
+.page-index .layui-side-scroll ul{
 	width:100%;
-	height:100px;
-	overflow: auto;
 }
-.layui-this {
-	background: #5FB878;
-	color: #fff !important;
+.page-index .layui-side .sidebar-main,
+.page-index .layui-side .grid-demo
+{
+	height:100%;
+}
+.page-index .sidebar-main{
+	border-right:1px solid #23262E;
+	position: relative;
+}
+.page-index .sidebar-nav li{
+	padding:10px 0;
+	text-align:center;
+}
+.page-index .sidebar-nav .nav-icon i{
+	font-size:30px;
+}
+.page-index .sidebar-nav a{
+	color:#fff;
+}
+.page-index .sidebar-nav .nav-text{
+	
+}
+.page-index .sidebar-sub{
+	height:150px;
+	text-align:center;
+	line-height:1;
+}
+.page-index .sidebar-sub .icon{
+	padding-top:20px;
+}
+.page-index .sidebar-sub .icon i{
+	font-size:80px;
+}
+.page-index .sidebar-sub .text{
+	padding-top:10px;
+}
+.page-index .subside-line{
+	text-align: center;
+	overflow:hidden;
+	padding-bottom: 20px;
+}
+.page-index .subside-line .line{
+	border-top:1px solid #fff;
+	margin:10px 5px;
+}
+.page-index .layui-nav-tree i{
+	font-size:20px;
 }
