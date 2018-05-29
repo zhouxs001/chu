@@ -38,6 +38,9 @@
 	border:none;
 	border-color: #009588;
 }
+.page-menu .delete-item{
+	font-size:24px;
+}
 .page-menu #menuTable tr td.eat-number{
 	padding:9px 15px;
 }

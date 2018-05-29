@@ -378,11 +378,34 @@
 			})
 			//表格中添加菜名
 			$("#menuTable td:empty ").on('click',function () {
+				let oTop = $(this).context.offsetTop;
+				let oLeft = $(this).context.offsetLeft;
+				let winWidth = $(window).width();
+				let winHeight = $(window).height();
+				let winScrollTop = $(window).scrollTop();
+				if(oLeft > winWidth/2){
+					oLeft -= 500;
+					console.log('在右侧');
+				}else{
+					oLeft += 250;
+					console.log('在左侧');
+				}
+
+				if(oTop > winHeight/2){
+					console.log('在下侧');
+					oTop = 100;
+				}else{
+					console.log('在上侧');
+					oTop = $(this).context.offsetTop;
+				}
+
 				whichTd = $(this);
+
 				layer.open({
 					type: 1,
 					title: '菜谱库',
 					area: '500px',
+					offset: [oTop+winScrollTop+'px',oLeft+'px'],
 					content: $('.layout-content') //这里content是一个普通的String
 				});
 			})
