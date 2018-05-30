@@ -371,13 +371,16 @@
 		$(function () {
 			var whichTd; //保存被点击的单元格
 			//删除功能提示
-			$('.delete-item').on('click',function () {
+			$('#menuTable').on('click','.delete-item',function (event) {
+				event.stopPropagation;
+				var target = this
 				layer.confirm('您确定要删除吗？', { icon: 3, title: '提示' }, function (index) {
+					$(target).parent().remove();
 					layer.close(index);
 				});
 			})
 			//表格中添加菜名
-			$("#menuTable td:empty ").on('click',function () {
+			$("#menuTable").on('click','td:empty',function () {
 				let oTop = $(this).context.offsetTop;
 				let oLeft = $(this).context.offsetLeft;
 				let winWidth = $(window).width();
