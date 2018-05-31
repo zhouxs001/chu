@@ -379,46 +379,77 @@
 					layer.close(index);
 				});
 			});
+
 			//表格中添加菜名
-			$("#menuTable").on('click','td:empty',function () {
-				let oTop = $(this).context.offsetTop;
-				let oLeft = $(this).context.offsetLeft;
-				let winWidth = $(window).width();
-				let winHeight = $(window).height();
-				let winScrollTop = $(window).scrollTop();
-				if(oLeft > winWidth/2){
-					oLeft -= 500;
-					console.log('在右侧');
-				}else{
-					oLeft += 250;
-					console.log('在左侧');
+			$("#menuTable").on('click','td',function () {
+				if($(this)[0].innerText.length==0){
+					whichTd = $(this);
+					let oTop = 0,oLeft = 0;
+					let tdTop = $(this).context.offsetTop;
+					let tdLeft = $(this).context.offsetLeft;
+					let tdWidth = $(this).context.offsetWidth;
+					let tdHeight = $(this).context.offsetHeight;
+					let winWidth = $(window).width();
+					let winHeight = $(window).height();
+					let winScrollTop = $(window).scrollTop();
+					let cntHeight = $('.layout-content').outerHeight(true);
+					let isTop,isLeft
+
+					if(tdLeft > winWidth/2){
+						oLeft = tdLeft - 500;
+						isLeft = false;
+						console.log('在右侧');
+					}else{
+						oLeft = tdLeft + tdWidth;
+						isLeft = true;
+						console.log('在左侧');
+					}
+
+					if(tdTop - winScrollTop > winHeight/2){
+						console.log('在下侧');
+						isTop = false;
+						oTop = tdTop - winScrollTop - cntHeight;
+						console.log(tdTop,winScrollTop)
+						if(isLeft){
+							oTop -= tdHeight;
+							console.log('hhff');
+						}
+					}else{
+						console.log('在上侧');
+						isTop = true;
+						oTop = tdTop - winScrollTop;
+					}
+
+					if(oLeft + 500 > winWidth){
+						oLeft = winWidth - 500
+					}
+
+					if((oTop - winScrollTop + cntHeight) > winHeight){
+						oTop = winHeight - cntHeight
+					}
+
+					if(oTop<0){
+						oTop = 0
+					}
+
+					layer.open({
+						type: 1,
+						title: '菜谱库',
+						area: '500px',
+						offset: [oTop+'px',oLeft+'px'],
+						content: $('.layout-content') //这里content是一个普通的String
+					});
 				}
+			});
 
-				if(oTop > winHeight/2){
-					console.log('在下侧');
-					oTop = 100;
-				}else{
-					console.log('在上侧');
-					oTop = $(this).context.offsetTop;
-				}
 
-				whichTd = $(this);
-
-				layer.open({
-					type: 1,
-					title: '菜谱库',
-					area: '500px',
-					offset: [oTop+winScrollTop+'px',oLeft+'px'],
-					content: $('.layout-content') //这里content是一个普通的String
-				});
-			})
 			//选择功能
-			$("#alertMenuTable .select ").on('click',function () {
+			$("#alertMenuTable .select").on('click',function () {
 				var foodName = $(this).prev().text();
 				var _html = '<div class="item">'+foodName+'<i class="layui-icon fr delete-item">&#x1007;</i></div>';
-				whichTd.append(_html)
-			})
-		})
+				whichTd.append(_html);
+			});
+		});
 	</script>
 </body>
 
