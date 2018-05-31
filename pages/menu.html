@@ -253,23 +253,23 @@
 			<div class="layui-form-item">
 				<label class="layui-form-label">荤素</label>
 				<div class="layui-input-block">
-					<input type="radio" name="like[1]" title="大荤">
-					<input type="radio" name="like[1]" title="小荤" checked>
-					<input type="radio" name="like[1]" title="清淡">
+					<input type="checkbox" name="like[1]" title="大荤">
+					<input type="checkbox" name="like[1]" title="小荤" checked>
+					<input type="checkbox" name="like[1]" title="清淡">
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">类别</label>
 				<div class="layui-input-block">
-					<input type="radio" name="like[2]" title="牛肉">
-					<input type="radio" name="like[2]" title="羊肉" checked>
-					<input type="radio" name="like[2]" title="鸡肉">
+					<input type="checkbox" name="like[2]" title="牛肉">
+					<input type="checkbox" name="like[2]" title="羊肉" checked>
+					<input type="checkbox" name="like[2]" title="鸡肉">
 				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">季节菜</label>
 				<div class="layui-input-block">
-					<input type="radio" name="like[3]" title="当季菜">
+					<input type="checkbox" name="like[3]" title="当季菜">
 				</div>
 			</div>
 			<div class="layui-form-item">
@@ -299,19 +299,25 @@
 							<td>素菜</td>
 							<td>蔬菜</td>
 							<td>清炒大白菜</td>
-							<td class="select ">选择</td>
+							<td class="select">
+								<button class="layui-btn layui-btn-primary layui-btn-sm">选择</button>
+							</td>
 						</tr>
 						<tr>
 							<td>面食</td>
 							<td>面点</td>
 							<td>肉包</td>
-							<td class="select ">选择</td>
+							<td class="select">
+								<button class="layui-btn layui-btn-primary layui-btn-sm">选择</button>
+							</td>
 						</tr>
 						<tr>
 							<td>大荤</td>
 							<td>牛肉</td>
 							<td>土豆烧牛肉</td>
-							<td class="select ">选择</td>
+							<td class="select">
+								<button class="layui-btn layui-btn-primary layui-btn-sm">选择</button>
+							</td>
 						</tr>
 					</tbody>
 				</table>
@@ -382,55 +388,59 @@
 
 			//表格中添加菜名
 			$("#menuTable").on('click','td',function () {
+				whichTd = $(this);
+				let oTop = 0,oLeft = 0;
+				let tdTop = $(this).context.offsetTop;
+				let tdLeft = $(this).context.offsetLeft;
+				let tdWidth = $(this).context.offsetWidth;
+				let tdHeight = $(this).context.offsetHeight;
+				let winWidth = $(window).width();
+				let winHeight = $(window).height();
+				let winScrollTop = $(window).scrollTop();
+				let cntHeight = $('.layout-content').outerHeight(true);
+				let isTop,isLeft
+
+				if(tdLeft > winWidth/2){
+					oLeft = tdLeft - 500;
+					isLeft = false;
+					console.log('在右侧');
+				}else{
+					oLeft = tdLeft + tdWidth;
+					isLeft = true;
+					console.log('在左侧');
+				}
+
+				if(tdTop - winScrollTop > winHeight/2){
+					console.log('在下侧');
+					isTop = false;
+					oTop = tdTop - winScrollTop - cntHeight;
+					console.log(tdTop,winScrollTop)
+					if(isLeft){
+						oTop -= tdHeight;
+						console.log('hhff');
+					}
+				}else{
+					console.log('在上侧');
+					isTop = true;
+					oTop = tdTop - winScrollTop;
+				}
+
+				if(oLeft + 500 > winWidth){
+					oLeft = winWidth - 500
+				}
+
+				if((oTop - winScrollTop + cntHeight) > winHeight){
+					oTop = winHeight - cntHeight
+				}
+
+				if(oTop<0){
+					oTop = 0
+				}
 				if($(this)[0].innerText.length==0){
-					whichTd = $(this);
-					let oTop = 0,oLeft = 0;
-					let tdTop = $(this).context.offsetTop;
-					let tdLeft = $(this).context.offsetLeft;
-					let tdWidth = $(this).context.offsetWidth;
-					let tdHeight = $(this).context.offsetHeight;
-					let winWidth = $(window).width();
-					let winHeight = $(window).height();
-					let winScrollTop = $(window).scrollTop();
-					let cntHeight = $('.layout-content').outerHeight(true);
-					let isTop,isLeft
-
-					if(tdLeft > winWidth/2){
-						oLeft = tdLeft - 500;
-						isLeft = false;
-						console.log('在右侧');
-					}else{
-						oLeft = tdLeft + tdWidth;
-						isLeft = true;
-						console.log('在左侧');
+					if($(this)[0].children[0] && $(this)[0].children[0].tagName=='INPUT'){
+						return false;
 					}
-
-					if(tdTop - winScrollTop > winHeight/2){
-						console.log('在下侧');
-						isTop = false;
-						oTop = tdTop - winScrollTop - cntHeight;
-						console.log(tdTop,winScrollTop)
-						if(isLeft){
-							oTop -= tdHeight;
-							console.log('hhff');
-						}
-					}else{
-						console.log('在上侧');
-						isTop = true;
-						oTop = tdTop - winScrollTop;
-					}
-
-					if(oLeft + 500 > winWidth){
-						oLeft = winWidth - 500
-					}
-
-					if((oTop - winScrollTop + cntHeight) > winHeight){
-						oTop = winHeight - cntHeight
-					}
-
-					if(oTop<0){
-						oTop = 0
-					}
+					
 
 					layer.open({
 						type: 1,
@@ -439,13 +449,23 @@
 						offset: [oTop+'px',oLeft+'px'],
 						content: $('.layout-content') //这里content是一个普通的String
 					});
+				}else{
+					if($(this)[0].innerHTML.indexOf('delete-item')>-1){
+						layer.open({
+							type: 1,
+							title: '菜谱库',
+							area: '500px',
+							offset: [oTop+'px',oLeft+'px'],
+							content: $('.layout-content') //这里content是一个普通的String
+						});
+					}
 				}
 			});
 
 
 			//选择功能
-			$("#alertMenuTable .select").on('click',function () {
-				var foodName = $(this).prev().text();
+			$("#alertMenuTable .select button").on('click',function () {
+				var foodName = $(this).parent().prev().text();
 				var _html = '<div class="item">'+foodName+'<i class="layui-icon fr delete-item">&#x1007;</i></div>';
 				whichTd.append(_html);
 			});
