@@ -13,7 +13,7 @@
 	<div class="page-menu">
 		<div class="layui-fluid layui-bg-gray" lay-separator=">">
 			<span class="layui-breadcrumb">
-				<a href="./pages/home.html" target="showConent">首页</a>
+				<a href="../pages/home.html" target="showConent">首页</a>
 				<a href="">计划菜单</a>
 				<a>
 					<cite>正文</cite>
@@ -388,7 +388,7 @@
 			});
 
 			//表格中添加菜名
-			$("#menuTable").on('click','td',function () {
+			$("#menuTable").on('dblclick','td',function () {
 				whichTd = $(this);
 				let oTop = 0,oLeft = 0;
 				let tdTop = $(this).context.offsetTop;

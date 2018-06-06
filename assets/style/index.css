@@ -88,3 +88,40 @@
 .page-index .layui-nav-tree i{
 	font-size:20px;
 }
+.layui-layout-body{
+	height:100%;
+}
+.float-left-bottom{
+	position: fixed;
+	width:200px;
+	height:200px;
+	z-index:3000;
+	left:10px;
+	bottom:10px;
+	background-color:#393D49;
+	border:2px solid #23262E;
+	color:#fff;
+}
+.float-left-bottom .title {
+	line-height: 80px;
+}
+.float-left-bottom .title .middle{
+	text-align:center;
+	color:#fff;
+	font-size:16px;
+}
+.float-left-bottom .title .line{
+	border-top:1px solid #fff;
+	margin:40px 5px;
+}
+.float-left-bottom .content{
+	color:#fff;
+}
+.float-left-bottom .content a{
+	color:#fff;
+	font-size:16px;
+}
+.float-left-bottom .content a i{
+	color:#fff;
+	font-size:20px;
+}

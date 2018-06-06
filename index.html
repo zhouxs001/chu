@@ -5,209 +5,200 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>厨政后台系统</title>
 	<link rel="stylesheet" type="text/css" href="./lib/layui/css/layui.css" />
-	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_682679_ydqhwrh569c9dx6r.css" />
+	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_682679_21jkglajohe0cnmi.css" />
 	<link rel="stylesheet" type="text/css" href="./assets/style/base.css" />
 	<link rel="stylesheet" type="text/css" href="./assets/style/index.css" />
 </head>
 <body class="layui-layout-body">
-<div class="layui-layout layui-layout-admin page-index">
-  <div class="layui-header layui-row">
-  	<div class="llayui-bg-black" style="width:200px;height:60px;background-color:#393D49"></div>
-    <div class="layui-logo layui-hide-xs" style="width:200px;height:60px;line-height:30px;padding-top:20px;">
-	   厨政<br/>一体化精细化管理平台
-	</div>
+  <div class="layui-layout layui-layout-admin page-index">
+    <div class="layui-header layui-row">
+    	<div class="llayui-bg-black" style="width:200px;height:60px;background-color:#393D49"></div>
+      <div class="layui-logo layui-hide-xs" style="width:200px;height:60px;line-height:30px;padding-top:20px;">
+  	   厨政<br/>一体化精细化管理平台
+      </div>
 
-    <!-- 头部区域（可配合layui已有的水平导航） -->
-    <ul class="layui-nav layui-layout-left" style="margin-left:50px;">
-		<li class="layui-nav-item">
-			<a href="javascript:;" class="nav-text">
-				<i class="iconfont icon-home"></i>
-				首页
-			</a>
-		</li>
-		<li class="layui-nav-item">
-			<a href="./pages/menu.html" class="nav-text" target="showConent">
-				<i class="iconfont">&#xe604;</i>
-				菜谱
-			</a>
-		</li>
-		<li class="layui-nav-item">
-			<a href="javascript:;" class="nav-text">
-				<i class="iconfont">&#xe609;</i>
-				库存
-			</a>
-		</li>
-		<li class="layui-nav-item">
-			<a href="javascript:;" class="nav-text">
-				<i class="iconfont">&#xe605;</i>
-				采购
-			</a>
-		</li>
-		<li class="layui-nav-item">
-			<a href="javascript:;" class="nav-text">
-				<i class="iconfont">&#xe67d;</i>
-				财务
-			</a>
-		</li>
-		<li class="layui-nav-item">
-			<a href="javascript:;" class="nav-text">
-				<i class="iconfont">&#xe61d;</i>
-				数据
-			</a>
-		</li>
-		<li class="layui-nav-item">
-			<a href="javascript:;" class="nav-text">
-				<i class="iconfont">&#xe607;</i>
-				系统
-			</a>
-		</li>
-    </ul>
+      <!-- 头部区域（可配合layui已有的水平导航） -->
+      <ul class="layui-nav layui-layout-left" style="margin-left:50px;">
+    		<li class="layui-nav-item">
+    			<a href="./pages/home.html" class="nav-text" target="showConent">
+    				<i class="iconfont icon-home"></i>
+    				首页
+    			</a>
+    		</li>
+    		<li class="layui-nav-item">
+    			<a href="./pages/menu.html" class="nav-text" target="showConent">
+    				<i class="iconfont">&#xe604;</i>
+    				菜谱
+    			</a>
+    		</li>
+    		<li class="layui-nav-item">
+    			<a href="javascript:;" class="nav-text">
+    				<i class="iconfont">&#xe609;</i>
+    				库存
+    			</a>
+    		</li>
+    		<li class="layui-nav-item">
+    			<a href="javascript:;" class="nav-text">
+    				<i class="iconfont">&#xe605;</i>
+    				采购
+    			</a>
+    		</li>
+    		<li class="layui-nav-item">
+    			<a href="javascript:;" class="nav-text">
+    				<i class="iconfont">&#xe67d;</i>
+    				财务
+    			</a>
+    		</li>
+    		<li class="layui-nav-item">
+    			<a href="javascript:;" class="nav-text">
+    				<i class="iconfont">&#xe61d;</i>
+    				数据
+    			</a>
+    		</li>
+    		<li class="layui-nav-item">
+    			<a href="javascript:;" class="nav-text">
+    				<i class="iconfont">&#xe607;</i>
+    				系统
+    			</a>
+    		</li>
+      </ul>
 
-    <ul class="layui-nav layui-layout-right">
-		<li class="layui-nav-item">
-			<a href="javascript:;">
-				<img src="http://t.cn/RCzsdCq" class="layui-nav-img" />
-				<span class="welcome">
-					欢迎光临<br/>厨政
-				</span> 
-			</a>
-			<dl class="layui-nav-child">
-				<dd><a href="">修改密码</a></dd>
-				<dd><a href="">退出</a></dd>
-			</dl>
-		</li>
-    </ul>
-  </div>
+      <ul class="layui-nav layui-layout-right">
+    		<li class="layui-nav-item">
+    			<a href="javascript:;">
+    				<img src="http://t.cn/RCzsdCq" class="layui-nav-img" />
+    				<span class="welcome">
+    					欢迎光临<br/>厨政
+    				</span> 
+    			</a>
+    			<dl class="layui-nav-child">
+    				<dd><a href="">修改密码</a></dd>
+    				<dd><a href="">退出</a></dd>
+    			</dl>
+    		</li>
+      </ul>
+    </div>
   
-  <div class="layui-side layui-bg-black">
-    <div class="layui-row grid-demo">
-<!--       <div class="layui-col-md3 layui-col-xs3 layui-col-sm3 sidebar-main" >
-        <ul class="sidebar-nav" style="min-width:50px;">
-          <li>
-            <a href="./pages/home.html" target="showConent">
-              <h4 class="nav-icon">
-                <i class="iconfont icon-home"></i>
-              </h4>
-              <p class="nav-text">首页</p>
-            </a>
-          </li>
-          <li>
-            <a href="./pages/index.html" target="showConent">
-              <h4 class="nav-icon">
+    <div class="layui-side layui-bg-black">
+      <div class="layui-row grid-demo">
+        <div class="layui-col-md12 layui-col-xs12 layui-col-sm12" style="margin-top:30px;">
+          <div class="layui-side-scroll">
+            <div class="sidebar-sub">
+              <h4 class="icon">
                 <i class="iconfont">&#xe604;</i>
               </h4>
-              <p class="nav-text">菜谱</p>
-            </a>
-          </li>
-          <li>
-            <h4 class="nav-icon">
-              <i class="iconfont">&#xe609;</i>
-            </h4>
-            <p class="nav-text">库存</p>
-          </li>
-          <li>
-            <h4 class="nav-icon">
-              <i class="iconfont">&#xe605;</i>
-            </h4>
-            <p class="nav-text">采购</p>
-          </li>
-          <li>
-            <h4 class="nav-icon">
-              <i class="iconfont">&#xe67d;</i>
-            </h4>
-            <p class="nav-text">财务</p>
-          </li>
-          <li>
-            <h4 class="nav-icon">
-              <i class="iconfont">&#xe61d;</i>
-            </h4>
-            <p class="nav-text">数据</p>
-          </li>
-          <li>
-            <h4 class="nav-icon">
-              <i class="iconfont">&#xe607;</i>
-            </h4>
-            <p class="nav-text">系统</p>
-          </li>
-        </ul>
-      </div> -->
-      <div class="layui-col-md12 layui-col-xs12 layui-col-sm12" style="margin-top:30px;">
-        <div class="layui-side-scroll">
-          <div class="sidebar-sub">
-            <h4 class="icon">
-              <i class="iconfont">&#xe604;</i>
-            </h4>
-            <p class="text" style="font-size:16px;">计划菜谱</p>
-          </div>
-          <div class="subside-line">
-            <div class="layui-row">
-              <div class="layui-col-md3">
-                <div class="line"></div>
-              </div>
-              <div class="layui-col-md6">供餐模式</div>
-              <div class="layui-col-md3">
-                <div class="line"></div>
+              <p class="text" style="font-size:16px;">计划菜谱</p>
+            </div>
+            <div class="subside-line">
+              <div class="layui-row">
+                <div class="layui-col-md3">
+                  <div class="line"></div>
+                </div>
+                <div class="layui-col-md6">供餐模式</div>
+                <div class="layui-col-md3">
+                  <div class="line"></div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-          <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-            <li class="layui-nav-item layui-nav-itemed">
-              <a class="" href="javascript:;">
-                <i class="iconfont">&#xe658;</i>
-                自助餐
-              </a>
-              <dl class="layui-nav-child">
-                <dd><a href="javascript:;">列表一</a></dd>
-                <dd><a href="javascript:;">列表二</a></dd>
-                <dd><a href="javascript:;">列表三</a></dd>
-                <dd><a href="./index.html" target="showConent">超链接</a></dd>
-              </dl>
-            </li>
-            <li class="layui-nav-item">
-              <a href="javascript:;">
-                <i class="iconfont">&#xe69a;</i>
-                零点自选
-              </a>
-            </li>
-            <li class="layui-nav-item">
-              <a href="">
-                <i class="iconfont">&#xe72e;</i>
-                套餐多点
-              </a>
-            </li>
-            <li class="layui-nav-item">
-              <a href="">
-                <i class="iconfont">&#xe6b3;</i>
-                桌菜
-              </a>
-            </li>
-          </ul>
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+              <li class="layui-nav-item layui-nav-itemed">
+                <a class="" href="javascript:;">
+                  <i class="iconfont">&#xe658;</i>
+                  自助餐
+                </a>
+                <dl class="layui-nav-child">
+                  <dd><a href="javascript:;">列表一</a></dd>
+                  <dd><a href="javascript:;">列表二</a></dd>
+                  <dd><a href="javascript:;">列表三</a></dd>
+                  <dd><a href="./index.html" target="showConent">超链接</a></dd>
+                </dl>
+              </li>
+              <li class="layui-nav-item">
+                <a href="javascript:;">
+                  <i class="iconfont">&#xe69a;</i>
+                  零点自选
+                </a>
+              </li>
+              <li class="layui-nav-item">
+                <a href="">
+                  <i class="iconfont">&#xe72e;</i>
+                  套餐多点
+                </a>
+              </li>
+              <li class="layui-nav-item">
+                <a href="">
+                  <i class="iconfont">&#xe6b3;</i>
+                  桌菜
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-
-  </div>
   
-  <div class="layui-body">
-    <!-- 内容主体区域 -->
-    <iframe src="./pages/home.html" width="100%" height="100%" scrolling="yes" 
-      frameborder="0" border="0" marginwidth="0" id="showFrame" name="showConent">
-    </iframe>
-  </div>
+    <div class="layui-body">
+      <!-- 内容主体区域 -->
+      <iframe src="./pages/home.html" width="100%" height="100%" scrolling="yes" 
+        frameborder="0" border="0" marginwidth="0" id="showFrame" name="showConent">
+      </iframe>
+    </div>
   
-  <div class="layui-footer">
-    <!-- 底部固定区域 -->
-    © 深圳绿源餐饮管理有限公司
+    <div class="layui-footer">
+      <!-- 底部固定区域 -->
+      © 深圳绿源餐饮管理有限公司
+    </div>
+  
   </div>
-</div>
+  <div class="float-left-bottom">
+    <div class="title">
+      <div class="layui-row">
+        <div class="layui-col-md3">
+          <div class="line"></div>
+        </div>
+        <div class="layui-col-md6 middle">菜谱档案目录</div>
+        <div class="layui-col-md3">
+          <div class="line"></div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <ul class="layui-nav layui-nav-tree">
+        <li class="layui-nav-item float-item-1">
+          <a href="javascript:;" class="nav-text">
+            <i class="iconfont">&#xe604;</i>
+            菜谱库
+          </a>
+        </li>
+        <li class="layui-nav-item float-item-2">
+          <a href="javascript:;" class="nav-text">
+            <i class="iconfont">&#xe608;</i>
+            历史记录
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 <script src="./lib/layui/layui.js"></script>
+<script src="../lib/jquery/jquery.min.js "></script>
 <script>
 //JavaScript代码区域
 layui.use('element', function(){
   var element = layui.element;
 });
+
+$(function(){
+  //点击悬浮框-菜谱库
+  $('.float-item-1').on('click',function(){
+    alert('点击悬浮框-菜谱库内容');
+  });
+  //点击悬浮框-历史记录
+  $('.float-item-2').on('click',function(){
+    alert('点击悬浮框-历史记录');
+  })
+})
 </script>
 </body>
 </html>
