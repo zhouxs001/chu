@@ -54,3 +54,7 @@
 #menuTable tr td:nth-child(n+2) {
 	padding: 0;
 }
+.layui-table-wrapper table th,
+.layui-table-wrapper table td{
+	text-align: center;
+}

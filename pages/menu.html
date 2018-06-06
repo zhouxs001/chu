@@ -300,7 +300,7 @@
 							<td>蔬菜</td>
 							<td>清炒大白菜</td>
 							<td class="select">
-								<button class="layui-btn layui-btn-primary layui-btn-sm">选择</button>
+								<button class="layui-btn layui-btn-normal layui-btn-sm">选择</button>
 							</td>
 						</tr>
 						<tr>
@@ -308,7 +308,7 @@
 							<td>面点</td>
 							<td>肉包</td>
 							<td class="select">
-								<button class="layui-btn layui-btn-primary layui-btn-sm">选择</button>
+								<button class="layui-btn layui-btn-normal layui-btn-sm">选择</button>
 							</td>
 						</tr>
 						<tr>
@@ -316,7 +316,7 @@
 							<td>牛肉</td>
 							<td>土豆烧牛肉</td>
 							<td class="select">
-								<button class="layui-btn layui-btn-primary layui-btn-sm">选择</button>
+								<button class="layui-btn layui-btn-normal layui-btn-sm">选择</button>
 							</td>
 						</tr>
 					</tbody>
@@ -378,8 +378,9 @@
 			var whichTd; //保存被点击的单元格
 			//删除功能提示
 			$('#menuTable').on('click','.delete-item',function (event) {
-				event.stopPropagation;
-				var target = this
+				event.preventDefault();
+				event.stopPropagation();
+				var target = this;
 				layer.confirm('您确定要删除吗？', { icon: 3, title: '提示' }, function (index) {
 					$(target).parent().remove();
 					layer.close(index);
@@ -403,24 +404,23 @@
 				if(tdLeft > winWidth/2){
 					oLeft = tdLeft - 500;
 					isLeft = false;
-					console.log('在右侧');
+					// console.log('在右侧');
 				}else{
 					oLeft = tdLeft + tdWidth;
 					isLeft = true;
-					console.log('在左侧');
+					// console.log('在左侧');
 				}
 
 				if(tdTop - winScrollTop > winHeight/2){
-					console.log('在下侧');
+					// console.log('在下侧');
 					isTop = false;
 					oTop = tdTop - winScrollTop - cntHeight;
-					console.log(tdTop,winScrollTop)
+					// console.log(tdTop,winScrollTop)
 					if(isLeft){
 						oTop -= tdHeight;
-						console.log('hhff');
 					}
 				}else{
-					console.log('在上侧');
+					// console.log('在上侧');
 					isTop = true;
 					oTop = tdTop - winScrollTop;
 				}
@@ -436,12 +436,13 @@
 				if(oTop<0){
 					oTop = 0
 				}
+
 				if($(this)[0].innerText.length==0){
+					//当单元格为空时，弹出添加菜谱的菜单
 					if($(this)[0].children[0] && $(this)[0].children[0].tagName=='INPUT'){
 						return false;
 					}
 					
-
 					layer.open({
 						type: 1,
 						title: '菜谱库',
@@ -450,7 +451,7 @@
 						content: $('.layout-content') //这里content是一个普通的String
 					});
 				}else{
-					if($(this)[0].innerHTML.indexOf('delete-item')>-1){
+					if($(this)[0].innerHTML.indexOf('item')>-1){
 						layer.open({
 							type: 1,
 							title: '菜谱库',
